@@ -1,5 +1,5 @@
 # reddit_client
-Aplicación que muestra las ultimas publicaciones posteadas en reddit en una sessión en particular.
+Aplicación que muestra las ultimas publicaciones posteadas en reddit.
 
 ![Imagen 1] [1]
 
