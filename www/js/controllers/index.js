@@ -10,17 +10,16 @@
   function articlesCtrl ($scope, Articles) {
 
     $scope.articles = [];
-    $scope.prueba = moment(1466686108).endOf('day').fromNow();
-    console.log();
+
     $scope.loadArticles = () => {
       Articles.get().then((response)=> {
-        // console.log(response.data.children);
         $scope.articles = response.data.children;
       });
     }
 
     $scope.loadMore = () => {
       if ($scope.articles.length > 0) {
+
         let last = $scope.articles[$scope.articles.length-1].data.name;
         Articles.more(last).then((response) => {
           response.data.children.map((article) => {
@@ -45,6 +44,10 @@
       });
       $scope.$broadcast('scroll.refreshComplete');
     };
+
+    $scope.openLink = (url) => {
+      window.open(url, '_blank');
+    }
   }
 
 })();

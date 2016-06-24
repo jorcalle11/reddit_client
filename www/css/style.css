@@ -1,1 +1,14 @@
 /* Empty. Add your own CSS if you like */
+.alert {
+  background-color: rgb(247, 156, 156);
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 70%;
+  text-align: center;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

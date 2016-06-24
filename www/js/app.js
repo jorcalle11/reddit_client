@@ -18,6 +18,11 @@
         // a much nicer keyboard experience.
         cordova.plugins.Keyboard.disableScroll(true);
       }
+
+      if (window.cordova && window.cordova.InappBrowser) {
+        window.open = window.cordova.InappBrowser.open;
+      }
+
       if(window.StatusBar) {
         StatusBar.styleDefault();
       }

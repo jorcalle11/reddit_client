@@ -37,7 +37,8 @@
           on-refresh="doRefresh()">
         </ion-refresher>
         <section class="list" ng-init="loadArticles()">
-          <a href="{{article.data.url}}" class="item item-thumbnail-left" ng-repeat="article in articles" target="_blank">
+          <div class="alert" ng-if="!articles.length">Cargando noticias, espere....</div>
+          <a class="item item-thumbnail-left" ng-repeat="article in articles" ng-click="openLink(article.data.url)" ng-cloak>
             <img ng-src="{{article.data.thumbnail}}" ng-if="article.data.thumbnail.indexOf('http') === 0"/>
             <h2>{{article.data.title}}</h2>
             <p>{{article.data.domain}}</p>
@@ -47,7 +48,7 @@
         </section>
         <ion-infinite-scroll
           on-infinite="loadMore()"
-          distance="1%">
+          distance="3%">
         </ion-infinite-scroll>
       </ion-content>
     </ion-pane>
